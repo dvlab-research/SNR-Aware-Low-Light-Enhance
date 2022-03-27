@@ -16,19 +16,25 @@ We propose to take an SNR prior to guide the feature fusion and formulate the SN
 
 ### LOL datasets
 Please download the LOL-v1 and LOL-v2 from [CVPR-2020-Semi-Low-Light](https://github.com/flyywh/CVPR-2020-Semi-Low-Light).
+
 The directory of LOL-v1 should contain our485 and eval15.
+
 The directory of LOL-v2-real should contain Real_captured/Train and Real_captured/Test.
+
 The directory of LOL-v2-synthetic should contain Synthetic/Train and Synthetic/Test.
+
 Please place the directory of LOL-v1, LOL-v2-real, and LOL-v2-synthetic under "datasets".
 
 ### SID and SMID dataset
 For SID, we use the subset captured by the Sony camera and follow the script provided by SID to transfer the low-light images from RAW to RGB using rawpy’s default ISP. 
+
 For SMID, we use its full images and also transfer the RAWdata to RGB, since our work explores low-light image enhancement in the RGB domain.
 
-You can download our processed datasets for SID and SMID from [baidu pan](https://pan.baidu.com/s/1HRr-5LJO0V0CWqtoctQp9w) (验证码: gplv) and [baidu pan](https://pan.baidu.com/s/1Qol_4GsIjGDR8UT9IRZbBQ) (验证码: btux), and there should contain "SMID_Long_np and SMID_LQ_np", """long_sid2 and short_sid2".
+You can download our processed datasets for SID and SMID from [baidu pan](https://pan.baidu.com/s/1HRr-5LJO0V0CWqtoctQp9w) (验证码: gplv) and [baidu pan](https://pan.baidu.com/s/1Qol_4GsIjGDR8UT9IRZbBQ) (验证码: btux), and there should contain "SMID_Long_np and SMID_LQ_np", "long_sid2 and short_sid2".
 
 ### SDSD dataset
 Different from original SDSD datasets with dynamic scenes, we utilize its static version (the scenes are the same of original SDSD).
+
 And you can download the SDSD-indoor and SDSD-outdoor from [baidu pan](https://pan.baidu.com/s/1rfRzshGNcL0MX5soRNuwTA) (验证码: jo1v) and [baidu pan](https://pan.baidu.com/s/1JzDQnFov-u6aBPPgjSzSxQ) (验证码: uibk), and there should contain indoor_static_np and outdoor_static_np.
 
 ## Project Setup
