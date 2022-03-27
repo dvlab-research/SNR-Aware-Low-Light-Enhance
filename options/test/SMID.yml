@@ -12,8 +12,8 @@ datasets:
     name: test
     mode: video_samesize_SMID_test
 
-    dataroot_GT: /mnt/proj3/xgxu/EDVR/datasets/SMID_Long_np
-    dataroot_LQ: /mnt/proj3/xgxu/EDVR/datasets/SMID_LQ_np
+    dataroot_GT: path_to_datasets/SMID_Long_np
+    dataroot_LQ: path_to_datasets/SMID_LQ_np
 
     cache_data: true
     N_frames: 5
@@ -33,5 +33,5 @@ network_G:
 
 #### path
 path:
-  root: /mnt/proj3/xgxu/EDVR
-  pretrain_model_G: /mnt/proj3/xgxu/EDVR/experiments/dark_light_ours/smid-dark-light3_base_unet_transformer2_blur_unet2205_cos27/models/200000_G.pth
+  root: ./
+  pretrain_model_G: smid_G.pth

@@ -12,8 +12,8 @@ datasets:
   test:  # the 1st test dataset
     name: test
     mode: video_samesize_lol3
-    dataroot_GT: /mnt/proj3/xgxu/EDVR/datasets/LOL/LOL-v2/Synthetic/Test/Normal
-    dataroot_LQ: /mnt/proj3/xgxu/EDVR/datasets/LOL/LOL-v2/Synthetic/Test/Low
+    dataroot_GT: path_to_datasets/LOLv2/Synthetic/Test/Normal
+    dataroot_LQ: path_to_datasets/LOLv2/Synthetic/Test/Low
     train_size: [384, 384]
     cache_data: true
     N_frames: 5
@@ -34,5 +34,5 @@ network_G:
 
 #### path
 path:
-  root: /mnt/proj3/xgxu/EDVR
-  pretrain_model_G: /mnt/proj3/xgxu/EDVR/experiments/dark_light_ours/lol3-dark-light3_transformer_blur2_unet22_05_light322_2222_cos27_3/models/400000_G_choose.pth
+  root: ./
+  pretrain_model_G: LOLv2_synthetic.pth

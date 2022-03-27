@@ -12,8 +12,8 @@ datasets:
   test:  # the 1st test dataset
     name: REDS4
     mode: video_samesize_SDSD_test
-    dataroot_GT: /mnt/proj3/xgxu/EDVR/datasets/outdoor_static_np/GT
-    dataroot_LQ: /mnt/proj3/xgxu/EDVR/datasets/outdoor_static_np/input
+    dataroot_GT: path_to_datasets/outdoor_static_np/GT
+    dataroot_LQ: path_to_datasets/outdoor_static_np/input
     train_size: [960, 512]
     cache_data: true
     N_frames: 5
@@ -34,5 +34,5 @@ network_G:
 
 #### path
 path:
-  root: /mnt/proj3/xgxu/EDVR
-  pretrain_model_G: /mnt/proj3/xgxu/EDVR/experiments/dark_light_ours/outdoor-total-v2-denoise-dark-light3_base_unet_transformer2_blur2_unet2205_cos27_6/models/80000_G.pth
+  root: ./
+  pretrain_model_G: outdoor_G.pth

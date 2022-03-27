@@ -55,7 +55,7 @@ network_G:
 
 #### path
 path:
-  root: /mnt/proj3/xgxu/EDVR
+  root: ./
   strict_load: false
 
 #### training settings: learning rate scheme, loss
