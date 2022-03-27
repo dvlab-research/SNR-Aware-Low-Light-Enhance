@@ -1,0 +1,84 @@
+#### general settings
+name: SDSD_indoor_model
+use_tb_logger: true
+model: video_base4_m
+distortion: sr
+scale: 1
+gpu_ids: [0]
+
+#### datasets
+datasets:
+  train:
+    name: indoor
+    mode: video_samesize_SDSD_train
+    interval_list: [1]
+    random_reverse: false
+    border_mode: false
+    dataroot_GT: path_to_datasets/indoor_static_np/GT
+    dataroot_LQ: path_to_datasets/indoor_static_np/input
+    train_size: [960, 512]
+    cache_keys: ~
+    cache_data: true
+    padding: new_info
+    testing_dir: pair11,pair21,pair1,pair19,pair4,pair9
+
+    N_frames: 5     # how many frames as a input.
+    use_shuffle: true
+    n_workers: 16  # per GPU
+    batch_size: 12
+    GT_size: 256     # size you want to crop out as input sample.
+    LQ_size: 256
+    use_flip: true
+    use_rot: true
+    color: RGB
+  val:
+    name: REDS4
+    mode: video_samesize_SDSD_train
+    dataroot_GT: path_to_datasets/indoor_static_np/GT
+    dataroot_LQ: path_to_datasets/indoor_static_np/input
+    cache_data: true
+    N_frames: 5
+    padding: new_info
+    train_size: [960, 512]
+
+#### network structures
+network_G:
+  which_model_G: low_light_transformer
+  nf: 64
+  nframes: 5      # must be same as N_frames in dataset.
+  groups: 8
+  front_RBs: 1
+  back_RBs: 1
+  predeblur: true     # default false
+  HR_in: true       # true if size(input) == size(HR)
+  w_TSA: true
+
+#### path
+path:
+  root: /mnt/proj3/xgxu/EDVR
+  strict_load: false
+
+#### training settings: learning rate scheme, loss
+train:
+  lr_G: !!float 4e-4
+  lr_scheme: CosineAnnealingLR_Restart
+  beta1: 0.9
+  beta2: 0.99
+  niter: 200000
+  ft_tsa_only: 0
+  warmup_iter: -1  # -1: no warm up
+  T_period: [200000]
+  restarts: [200000]
+  restart_weights: [1]
+  eta_min: !!float 1e-7
+
+  pixel_criterion: cb
+  pixel_weight: 1.0
+  val_freq: !!float 5e3
+
+  manual.resize960x512_seed: 0
+
+#### logger
+logger:
+  print_freq: 100
+  save_checkpoint_freq: !!float 5000

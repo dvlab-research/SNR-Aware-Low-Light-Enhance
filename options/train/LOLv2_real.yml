@@ -1,0 +1,82 @@
+#### general settings
+name: LOLv2_real_model
+use_tb_logger: true
+model: video_base3
+distortion: sr
+scale: 1
+gpu_ids: [0]
+
+#### datasets
+datasets:
+  train:
+    name: indoor
+    mode: video_samesize_lol2
+    interval_list: [1]
+    random_reverse: false
+    border_mode: false
+    dataroot_GT: path_to_datasets/LOLv2/Real_captured/Train/Normal
+    dataroot_LQ: path_to_datasets/LOLv2/Real_captured/Train/Low
+    train_size: [600, 400]
+    cache_keys: ~
+    cache_data: true
+    padding: new_info
+
+    N_frames: 5     # how many frames as a input.
+    use_shuffle: true
+    n_workers: 3  # per GPU
+    batch_size: 4
+    GT_size: 128     # size you want to crop out as input sample.
+    LQ_size: 128
+    use_flip: true
+    use_rot: true
+    color: RGB
+  val:
+    name: REDS4
+    mode: video_samesize_lol2
+    dataroot_GT: path_to_datasets/LOLv2/Real_captured/Train/Normal
+    dataroot_LQ: path_to_datasets/LOLv2/Real_captured/Train/Low
+    cache_data: true
+    N_frames: 5
+    padding: new_info
+    train_size: [600, 400]
+
+#### network structures
+network_G:
+  which_model_G: low_light_transformer
+  nf: 64
+  nframes: 5      # must be same as N_frames in dataset.
+  groups: 8
+  front_RBs: 1
+  back_RBs: 1
+  predeblur: true     # default false
+  HR_in: true       # true if size(input) == size(HR)
+  w_TSA: true
+
+#### path
+path:
+  root: /mnt/proj3/xgxu/EDVR
+  strict_load: false
+
+#### training settings: learning rate scheme, loss
+train:
+  lr_G: !!float 4e-4
+  lr_scheme: MultiStepLR
+  beta1: 0.9
+  beta2: 0.99
+  niter: 600000
+  ft_tsa_only: 0
+  warmup_iter: -1  # -1: no warm up
+  lr_steps: [50000, 100000, 200000, 300000]
+  lr_gamma: 0.5
+  eta_min: !!float 1e-7
+
+  pixel_criterion: cb
+  pixel_weight: 1.0
+  val_freq: !!float 5e3
+
+  manual.resize960x512_seed: 0
+
+#### logger
+logger:
+  print_freq: 100
+  save_checkpoint_freq: !!float 5000
