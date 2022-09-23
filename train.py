@@ -243,7 +243,7 @@ def main():
                             model.feed_data(val_data)
                             model.test()
                             visuals = model.get_current_visuals()
-                            sou_img = util.tensor2img(visuals['LQ'][2])
+                            sou_img = util.tensor2img(visuals['LQ'])
                             rlt_img = util.tensor2img(visuals['rlt'])  # uint8
                             rlt_img2 = util.tensor2img(visuals['rlt2'])  # uint8
                             gt_img = util.tensor2img(visuals['GT'])  # uint8
