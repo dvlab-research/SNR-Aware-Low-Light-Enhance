@@ -95,7 +95,6 @@ class VideoSameSizeDataset(data.Dataset):
 
             img_LQ_l = [img_LQ]
             img_LQ_l.append(img_GT)
-            img_LQ_l.append(img_nf)
             rlt = util.augment_torch(img_LQ_l, self.opt['use_flip'], self.opt['use_rot'])
             img_LQ = rlt[0]
             img_GT = rlt[1]
