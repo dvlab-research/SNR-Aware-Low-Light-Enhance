@@ -31,11 +31,13 @@ For SID, we use the subset captured by the Sony camera and follow the script pro
 For SMID, we use its full images and also transfer the RAWdata to RGB, since our work explores low-light image enhancement in the RGB domain.
 
 You can download our processed datasets for SID and SMID from [baidu pan](https://pan.baidu.com/s/1HRr-5LJO0V0CWqtoctQp9w) (验证码: gplv) and [baidu pan](https://pan.baidu.com/s/1Qol_4GsIjGDR8UT9IRZbBQ) (验证码: btux), and there should contain "SMID_Long_np and SMID_LQ_np" and "long_sid2 and short_sid2".
+Moreover, the SMID dataset can also be downloaeded from [google pan](https://drive.google.com/drive/folders/1OV4XgVhipsRqjbp8SYr-4Rpk3mPwvdvG?usp=sharing).
 
 ### SDSD dataset
 Different from original SDSD datasets with dynamic scenes, we utilize its static version (the scenes are the same of original SDSD).
 
 And you can download the SDSD-indoor and SDSD-outdoor from [baidu pan](https://pan.baidu.com/s/1rfRzshGNcL0MX5soRNuwTA) (验证码: jo1v) and [baidu pan](https://pan.baidu.com/s/1JzDQnFov-u6aBPPgjSzSxQ) (验证码: uibk), and there should contain "indoor_static_np" and "outdoor_static_np".
+They can also be downloaded from [google pan](https://drive.google.com/drive/folders/14TF0f9YQwZEntry06M93AMd70WH00Mg6?usp=share_link).
 
 ## Project Setup
 
@@ -132,7 +134,7 @@ the model trained with LOL-v2-synthetic: LOLv2_synthetic.pth
 If you find the project useful, please cite:
 
 ```
-@inproceedings{wang2021sdsd,
+@inproceedings{xu2021snr,
   title={SNR-aware Low-Light Image Enhancement},
   author={Xiaogang Xu, Ruixing Wang, Chi-Wing Fu, and Jiaya Jia},
   booktitle={CVPR},
@@ -145,4 +147,4 @@ If you find the project useful, please cite:
 This source code is inspired by [EDVR](https://github.com/xinntao/EDVR), [attention-is-all-you-need-pytorch](https://github.com/jadore801120/attention-is-all-you-need-pytorch).
 
 ## Contributions
-If you have any questions/comments/bug reports, feel free to e-mail the author Xiaogang Xu ([xgxu@cse.cuhk.edu.hk](xgxu@cse.cuhk.edu.hk)).
+If you have any questions/comments/bug reports, feel free to e-mail the author Xiaogang Xu ([xiaogangxu00@gmail.com](xiaogangxu00@gmail.com)).
