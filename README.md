@@ -31,7 +31,7 @@ For SID, we use the subset captured by the Sony camera and follow the script pro
 For SMID, we use its full images and also transfer the RAWdata to RGB, since our work explores low-light image enhancement in the RGB domain.
 
 You can download our processed datasets for SID and SMID from [baidu pan](https://pan.baidu.com/s/1HRr-5LJO0V0CWqtoctQp9w) (验证码: gplv) and [baidu pan](https://pan.baidu.com/s/1Qol_4GsIjGDR8UT9IRZbBQ) (验证码: btux), and there should contain "SMID_Long_np and SMID_LQ_np" and "long_sid2 and short_sid2".
-Moreover, the SMID dataset can also be downloaeded from [google pan](https://drive.google.com/drive/folders/1OV4XgVhipsRqjbp8SYr-4Rpk3mPwvdvG?usp=sharing).
+Moreover, the SMID dataset can also be downloaeded from [google pan](https://drive.google.com/drive/folders/1OV4XgVhipsRqjbp8SYr-4Rpk3mPwvdvG?usp=sharing); the SID dataset can also be downloaded from [google pan](https://drive.google.com/drive/folders/1eQ-5Z303sbASEvsgCBSDbhijzLTWQJtR?usp=share_link).
 
 ### SDSD dataset
 Different from original SDSD datasets with dynamic scenes, we utilize its static version (the scenes are the same of original SDSD).
@@ -134,7 +134,7 @@ the model trained with LOL-v2-synthetic: LOLv2_synthetic.pth
 If you find the project useful, please cite:
 
 ```
-@inproceedings{xu2021snr,
+@inproceedings{xu2022snr,
   title={SNR-aware Low-Light Image Enhancement},
   author={Xiaogang Xu, Ruixing Wang, Chi-Wing Fu, and Jiaya Jia},
   booktitle={CVPR},
